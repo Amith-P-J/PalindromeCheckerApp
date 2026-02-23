@@ -59,7 +59,7 @@ public class UseCase1PalindromeApp {
         }
         System.out.println("Is it a palindrome: " + Palindrome);
 
-*/
+
         //USE CASE 5
 
         Stack<Character> stack = new Stack<>();
@@ -81,5 +81,30 @@ public class UseCase1PalindromeApp {
             System.out.println(input + " is not a palindrome.");
         }
 
+ */
+
+        //USE CASE 6;
+
+        Queue<Character> queue = new LinkedList<>();
+        Stack<Character> stack = new Stack<>();
+        for (char c : input.toCharArray()) {
+            queue.add(c);
+            stack.push(c);
+        }
+        boolean Palindrome = true;
+        while (!queue.isEmpty()) {
+            char fromQueue = queue.poll();
+            char fromStack = stack.pop();
+
+            if (fromQueue != fromStack) {
+                Palindrome = false;
+                break;
+            }
+        }
+        if (Palindrome) {
+            System.out.println("Result: The string is a palindrome.");
+        } else {
+            System.out.println("Result: The string is not a palindrome.");
+        }
     }
 }

@@ -81,7 +81,7 @@ public class UseCase1PalindromeApp {
             System.out.println(input + " is not a palindrome.");
         }
 
- */
+
 
         //USE CASE 6;
 
@@ -106,5 +106,24 @@ public class UseCase1PalindromeApp {
         } else {
             System.out.println("Result: The string is not a palindrome.");
         }
+
+ */
+        //USE CASE 7;
+        Deque<Character> deque = new ArrayDeque<>();
+        for (char c : input.toCharArray()) {
+            deque.addLast(c);
+        }
+        boolean Palindrome = true;
+        while (deque.size() > 1) {
+            char first = deque.removeFirst();
+            char last = deque.removeLast();
+
+            if (first != last) {
+                Palindrome = false;
+                break;
+            }
+        }
+        System.out.println("is a palindrome: " + Palindrome);
     }
 }
+
